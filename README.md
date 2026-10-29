@@ -8,6 +8,8 @@
   <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
   <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
   <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img width="750" height="353" alt="image" src="https://github.com/user-attachments/assets/912c1810-d6f2-4427-8dbb-10548fd1b935" />
+
 </p>
 
 ---
