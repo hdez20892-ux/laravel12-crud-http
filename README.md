@@ -1,59 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Práctica Académica: Desarrollo de Aplicación CRUD con Peticiones HTTP en Laravel 12
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/3%20Full%20Color/laravel-logolockup-cervical-red.svg" width="400" alt="Laravel Logo">
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**** Información General de la Práctica
+* Materia:Aplicaciones Web
+* Framework:Laravel 12
+* Tecnologías de Soporte:Bootstrap 5, Vite, Blade Templates, PHP 8.2
+* Almacenamiento:Manejo de sesiones de Laravel (Simulación de base de datos en memoria de sesión)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+***** Descripción del Proyecto
+Este proyecto consiste en el desarrollo integral de una aplicación web basada en arquitectura MVC (Modelo-Vista-Controlador), implementando operaciones **CRUD** (Crear, Leer, Actualizar y Eliminar) mediante el uso estricto de **peticiones HTTP** estándar en Laravel 12. El diseño de la interfaz de usuario se encuentra optimizado con componentes modernos de **Bootstrap 5** y herramientas de compilación de assets mediante Vite.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+***** Arquitectura y Métodos HTTP Implementados
 
-## Laravel Sponsors
+El controlador `ProductoController` gestiona las solicitudes del cliente a través de los siguientes métodos y verbos HTTP:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **`GET /productos` (Listado y Filtrado)**:
+   * Recupera el listado completo de los registros almacenados en la sesión.
+   * Incorpora parámetros de consulta (`query strings`) para filtrar dinámicamente los registros por **nombre** y **categoría**.
 
-### Premium Partners
+2. **`POST /productos` (Creación de Registros)**:
+   * Procesa el envío del formulario de alta mediante el método POST.
+   * Implementa validaciones estrictas del lado del servidor (`$request->validate()`) con manejo visual de errores mediante clases `is-invalid` y alertas flash.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **`PUT /productos/{id}` (Actualización de Registros)**:
+   * Modifica los datos de un recurso existente utilizando el método HTTP PUT mediante el directivo de spoofing de formularios de Blade (`@method('PUT')`).
 
-## Contributing
+4. **`DELETE /productos/{id}` (Eliminación Segura)**:
+   * Elimina un recurso específico de la sesión al recibir la petición DELETE, integrado de manera interactiva con un **modal de confirmación de Bootstrap 5**.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Evidencias del Funcionamiento (Captura de Pantalla)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+A continuación se muestra la evidencia gráfica de la ejecución correcta de cada uno de los módulos de la aplicación:
 
-## Security Vulnerabilities
+****1. Vista General del Listado y Filtros (GET)
+Descripción: Interfaz principal que muestra la tabla de productos y el formulario de búsqueda por filtros.
+<img width="1012" height="488" alt="image" src="https://github.com/user-attachments/assets/f8668592-6686-4669-9ea4-10bf4cd4a50a" />
+Descripción: Interfaz que muestra el filtrado por nombre del producto
+<img width="1003" height="312" alt="image" src="https://github.com/user-attachments/assets/221229ae-e4b1-446c-99df-4144bc7b4053" />
+Descripción: Interfaz que muestra la inserccion de un nuevo producto
+<img width="855" height="527" alt="image" src="https://github.com/user-attachments/assets/80ed08ba-355c-4674-91e4-82255c97b319" />
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
